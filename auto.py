@@ -19,7 +19,7 @@ def login(type):
          'User-Agent':"Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"}
     s = requests.Session()
     s.headers = headers
-    post_data = {'sso_username': 'qiangyuntao2010', 'ssopassword': '5pG%P^9Om', 'iprange': type}
+    post_data = {'sso_username': '*', 'ssopassword': '*', 'iprange': type}
     r = s.post('https://login.oracle.com/', data=post_data, verify=False)
     print "log in, status = %s" % r.status_code
  
