@@ -6,13 +6,15 @@ import sys
 import webbrowser as web 
 import time
 import urllib3
+from pymouse import PyMouse
 
 urllib3.disable_warnings()
 
 def login(type):
     """login work"""
     web.open_new_tab("http://gccaa.us.oracle.com/")
-    time.sleep(5)
+    time.sleep(4)
+    '''
     headers =  {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
          'Accept-Encoding': 'gzip, deflate, br',
          'Accept-Language': 'en-US,en;q=0.5',
@@ -22,7 +24,14 @@ def login(type):
     post_data = {'sso_username': '*', 'ssopassword': '*', 'iprange': type}
     r = s.post('https://login.oracle.com/', data=post_data, verify=False)
     print "log in, status = %s" % r.status_code
- 
+    '''
+    m=PyMouse()
+    m.position()
+    x=737
+    y=438
+    m.move(x,y)
+    m.click(x,y,1)
+    
 def logout(type):
     """logout work"""
     headers =  {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
